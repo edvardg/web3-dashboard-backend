@@ -39,6 +39,7 @@ The Web3 Dashboard Backend is a NestJS application that provides APIs for user a
 
 4. **Start the Docker containers**:
    ```bash
+   // Update environment variables in `docker-compose.yml` file and run:
     docker-compose up -d
 
 5. **Run the migrations**:

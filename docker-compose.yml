@@ -4,9 +4,9 @@ services:
     container_name: postgres-web3_dashboard
     image: postgres:latest
     environment:
-      POSTGRES_DB: web3_dashboard
-      POSTGRES_USER: web3_user
-      POSTGRES_PASSWORD: web3_pass
+      POSTGRES_DB: "{db name}"
+      POSTGRES_USER: "{db username}"
+      POSTGRES_PASSWORD: "{db password}"
     ports:
       - '5432:5432'
     volumes:
