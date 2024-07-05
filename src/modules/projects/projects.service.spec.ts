@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { NotFoundException } from '@nestjs/common';
-import { Like, Repository } from 'typeorm';
+import { ILike, Repository } from 'typeorm';
 import { ProjectsService } from './projects.service';
 import { Project } from './entities/project.entity';
 import { ProjectType } from '../../common/enums/project-type.enum';
@@ -65,7 +65,7 @@ describe('ProjectsService', () => {
 
       expect(await service.findAll('Test')).toEqual(projects);
       expect(repository.find).toHaveBeenCalledWith({
-        where: [{ name: Like(`%Test%`) }, { contractAddress: Like(`%Test%`) }],
+        where: [{ name: ILike(`%Test%`) }, { contractAddress: ILike(`%Test%`) }],
       });
     });
   });

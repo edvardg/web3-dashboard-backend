@@ -1,6 +1,6 @@
 import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FindManyOptions, Like, Repository } from 'typeorm';
+import { FindManyOptions, ILike, Repository } from 'typeorm';
 import { Project } from './entities/project.entity';
 import { ProjectDto } from './dto/project.dto';
 
@@ -15,7 +15,7 @@ export class ProjectsService {
 
     if (key) {
       findOptions = {
-        where: [{ name: Like(`%${key}%`) }, { contractAddress: Like(`%${key}%`) }],
+        where: [{ name: ILike(`%${key}%`) }, { contractAddress: ILike(`%${key}%`) }],
       };
     }
 
